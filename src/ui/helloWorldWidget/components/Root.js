@@ -1,8 +1,7 @@
-import { createComponent } from 'frint';
 import { observe, streamProps } from 'frint-react';
 import React from 'react';
 
-const Root = createComponent({
+const Root = React.createClass({
   addProductToCart() {
     const { shoppingCartService, appId } = this.props;
 
