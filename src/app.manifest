@@ -10,36 +10,15 @@
                     "helloWorldRegion"
                 ]
             }
-        },
-        "permissions": {
-            "required": [
-                "shoppingCartContent",
-                "customerData"
-            ],
-            "issued": [
-                "signSellingData"
-            ]
-        },
-        "active": true
+        }
     },
     "api": {
-        "serviceUrls": {
-        },
         "environments": {
             "development": {
                 "serviceUrls": {
                     
                 }
             }
-        },
-        "permissions": {
-            "required": [
-                "shoppingCartContent",
-                "customerData"
-            ],
-            "issued": [
-                "signSellingData"
-            ]
         }
     }
 }
