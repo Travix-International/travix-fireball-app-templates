@@ -1,10 +1,11 @@
-import { createComponent, mapToProps } from 'frint';
+import { observe, streamProps } from 'frint-react';
 import React from 'react';
 
-const Root = createComponent({
+const Root = React.createClass({
   addProductToCart() {
     const { shoppingCartService, appId } = this.props;
 
+    // eslint-disable-next-line no-alert,no-undef
     alert(`TODO: Implement the steps in the description, and remove this alert!`);
 
     shoppingCartService.addItem({
@@ -46,12 +47,10 @@ const Root = createComponent({
   }
 });
 
-export default mapToProps({
-  app: app => ({
-    appName: app.getOption('name'),
-    appId: app.getOption('appId')
-  }),
-  services: {
-    shoppingCartService: 'shoppingCart'
-  }
+export default observe(function doObserve(app) {
+  return streamProps({})
+    .set('appName', app.getOption('name'))
+    .set('appId', app.getOption('id'))
+    .set('shoppingCartService', app.get('shoppingCart'))
+    .get$();
 })(Root);
